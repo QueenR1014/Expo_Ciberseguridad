@@ -35,9 +35,6 @@ body {
   transition: transform 0.5s ease; /*moving transition*/
 }
 
-.move-left{
-  transform: translateX(-100%);
-}
 
 .login-container::before {
   content: '';
@@ -53,6 +50,12 @@ body {
 
 .cypher-result{
   opacity: 0;
+  right: 12px;
+  transition: opacity 0.5s ease;
+}
+
+.show {
+  opacity: 1;
 }
 
 h1 {
@@ -178,4 +181,10 @@ button:hover {
 .content {
   margin-top: 100px; /* Espacio para que no quede debajo del navbar */
   text-align: center;
+  display: grid;                 /* ADD */
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  gap: 40px;                      /* Space between columns */
+  align-items: start;
+  width: 100%;
+  max-width: 1000px;
 }
