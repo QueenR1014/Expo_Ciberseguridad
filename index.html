@@ -9,20 +9,41 @@
   <script type="module" crossorigin src="/Expo_Ciberseguridad/assets/index-mHa4iv7D.js"></script>
 </head>
 <body>
-    <nav>
-        <h1>Selecciona:</h1>
-    </nav>
+
         
-    <h2>Control Criptográfico</h2>
-    <div>
-        <button type = 'submit' data-page="control/hashing.html">Hashing bcrypt</button>      
-        <button type = 'submit' data-page="control/MFA.html">Autentificación Multifactor</button>            
+    
+    <!-- Navbar -->
+    <div class="navbar">
+        <p class="logo">MyApp</p>
     </div>
 
-    <h2>Algoritmo de Cifrado</h2>
-    <div>
-        <button type = 'submit' data-page="cypher/AES.html">Advanced Encryption Standard</button>      
-        <button type = 'submit' data-page="cypger/RSA.html">RSA</button>            
+    <!-- Main Content -->
+    <div class="content">
+
+        <div class="login-container">
+            <h1>Login</h1>
+
+            <form action="/login" method="POST">
+
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <button type="submit">Sign In</button>
+
+            </form>
+
+        </div>
+    </div>
+
+    <div class ="cypher-result">
+        
     </div>
 </body>
 </html>
