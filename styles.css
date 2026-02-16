@@ -31,6 +31,12 @@ body {
   box-shadow: var(--shadow);
   position: relative;
   border-radius: 12px;
+
+  transition: transform 0.5s ease; /*moving transition*/
+}
+
+.move-left{
+  transform: translateX(-100%);
 }
 
 .login-container::before {
@@ -43,6 +49,10 @@ body {
   border: 1px solid var(--primary);
   z-index: -1;
   border-radius: 12px;
+}
+
+.cypher-result{
+  opacity: 0;
 }
 
 h1 {

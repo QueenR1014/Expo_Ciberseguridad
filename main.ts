@@ -1,19 +1,12 @@
-const buttons = document.querySelectorAll("button");
+const submit = document.getElementById("signed");
+const login = document.querySelector(".login-container")
 
-const directions: string[] = [
-  "control/hashing.html",
-  "control/MFA.html",
-  "cypher/AES.html",
-  "cypher/RSA.html"
-];
+if(submit instanceof HTMLButtonElement){
 
-buttons.forEach((button) => {
-  button.addEventListener("click", (event) => {
-    const target = event.currentTarget as HTMLButtonElement;
-    const page = target.getAttribute('data-page');
+  submit.addEventListener('click', () =>{
 
-    if(page){
-        window.location.href = page;
-    }
+    login?.classList.toggle("move-left");
   });
-});
+}
+
+
