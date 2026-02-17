@@ -25,9 +25,7 @@ if(submit instanceof HTMLButtonElement){
     const hash = hashSync(password.value, 10);
 
     cypher.textContent = hash;
-    
+
     cypher_result?.classList.add("show");
   });
 }
-
-
