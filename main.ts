@@ -1,18 +1,32 @@
-import bcrypt from 'bcrypt'
 
 const submit = document.getElementById("signed");
-const login = document.querySelector(".login-container");
 const cypher_result = document.querySelector(".cypher-result");
+
+import {hashSync} from 'bcrypt-ts'
+// Elementos de login 
+const email = document.getElementById("email") as HTMLInputElement | null;
+const password = document.getElementById("password") as HTMLInputElement | null;
+const cypher = document.getElementById("result"); //contenedor de resultado
+const original = document.getElementById("original");
 
 if(submit instanceof HTMLButtonElement){
 
-  submit.addEventListener('click', () =>{
-    const cypher = document.getElementById("result");
-    
+  submit.addEventListener('click', (event) =>{
+    event.preventDefault();
 
-    
-    cypher_result?.classList.toggle("show");
+    if(!email || !password || !cypher || !original) return; // evitar espacios nulos
 
+    if(email.value.trim() === "" || password.value.trim() === ""){
+      alert("Completa los campos");
+      return;
+    }
+
+    original.textContent = password.value; 
+    const hash = hashSync(password.value, 10);
+
+    cypher.textContent = hash;
+    
+    cypher_result?.classList.add("show");
   });
 }
 

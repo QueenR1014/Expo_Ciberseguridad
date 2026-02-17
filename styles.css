@@ -50,8 +50,17 @@ body {
 
 .cypher-result{
   opacity: 0;
-  right: 12px;
   transition: opacity 0.5s ease;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  border: 1px solid var(--primary);
+  padding: 40px 30px;
+  background-color: var(--secondary);
+  box-shadow: var(--shadow);
+  border-radius: 12px;
 }
 
 .show {
